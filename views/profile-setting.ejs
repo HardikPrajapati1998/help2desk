@@ -1,0 +1,293 @@
+﻿<%- include('header.ejs'); -%>
+  <!-- HEADER Navigation End -->
+
+  <!-- =-=-=-=-=-=-= Main Area =-=-=-=-=-=-= -->
+  <div class="main-content-area">
+
+    <!-- =-=-=-=-=-=-= Page Breadcrumb =-=-=-=-=-=-= -->
+    <section class="page-title">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-7 col-xs-12 text-left">
+            <h1><%= user_array.User_fname %> </h1>
+          </div>
+          <!-- end col -->
+          <div class="col-md-6 col-sm-5 col-xs-12 text-right">
+            <div class="bread">
+              <ol class="breadcrumb">
+                <li><a href="#">Home</a>
+                </li>
+                <li><a href="#">Pages</a>
+                </li>
+                <li class="active">Profile</li>
+              </ol>
+            </div>
+            <!-- end bread -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+
+    <!-- =-=-=-=-=-=-= Page Breadcrumb End =-=-=-=-=-=-= -->
+
+    <!-- =-=-=-=-=-=-= User Profile =-=-=-=-=-=-= -->
+    <section id="user-profile" class="user-profile parallex">
+      <div class="container">
+        <!-- Row -->
+        <div class="row">
+
+          <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="profile-sec ">
+              <div class="profile-head">
+                <div class="col-md-6 col-xs-12 col-sm-6 no-padding">
+                  <div class="profile-avatar">
+                    <span><img class="img-responsive img-circle" alt="" src="/profile/<%= user_array.User_profile %>"></span>
+                    <div class="profile-name">
+                      <h3><%= user_array.User_fname %> </h3>
+                      <i>Creative Graphic Designer</i>
+                      <ul class="social-btns">
+                        <li><a href="#" title=""><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#" title=""><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <li><a href="#" title=""><i class="fa fa-twitter"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-12 col-sm-6 no-padding">
+                  <ul class="profile-count">
+                    <li>171<i>Followers</i>
+                    </li>
+                    <li>13,725<i>Experience</i>
+                    </li>
+                    <li>120<i>Questions</i>
+                    </li>
+                  </ul>
+                  <ul class="profile-connect">
+                    <li><a title="" href="#">Follow</a>
+                    </li>
+                    <li><a title="" href="#">Hire Me</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Profile Sec -->
+          </div>
+
+        </div>
+        <!-- Row End -->
+      </div>
+      <!-- end container -->
+    </section>
+
+    <!-- =-=-=-=-=-=-= User Profile end =-=-=-=-=-=-= -->
+    
+ <!-- =-=-=-=-=-=-= User Form Settings =-=-=-=-=-=-= -->
+    <section class="section-padding-80" id="login">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+
+            <div class="box-panel">
+
+              <form method="POST" action="/profile_edit"  encType="multipart/form-data" >
+                <div class="form-group">
+                  <label>Upload Image</label>
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse… <input type="file" name="User_profile" value="<%= user_array.User_profile %>" id="imgInp">
+                </span>
+                    </span>
+                    <input type="text" name="User_profile" value="<%= user_array.User_profile %>" class="form-control" readonly>
+                  </div>
+                  <img id="img-upload" src="/profile/<%= user_array.User_profile %>" alt="" />
+                </div>
+
+                <button class="btn btn-primary btn-lg" type="submit">Change Image</button>
+
+              </form>
+
+            </div>
+          </div>
+
+          <div class="col-md-8">
+
+            <div class="box-panel">
+
+              <!-- form login -->
+              <form method="POST" action="/profile-setting">
+                <div class="form-group">
+                  <label>User Name</label>
+                  <input type="text" placeholder="John Doe" name="User_fname" value="<%= user_array.User_fname %> " class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" placeholder="Your Email" name="User_email" value="<%= user_array.User_email %> " class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" placeholder="Your Password" name="User_passowrd"  value="<%= user_array.User_password %> "  class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                  <input type="password" placeholder="Your Password" name="User_passord"  value="<%= user_array.User_password %> "  class="form-control">
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="checkbox flat-checkbox">
+                        <label>
+                          <input type="checkbox">
+                          <span class="fa fa-check"></span> Make My Profile Private?
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <button class="btn btn-primary btn-lg" type="submit">Update My Profile</button>
+
+              </form>
+              <!-- form login -->
+
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <!-- end container -->
+    </section>
+ <!-- =-=-=-=-=-=-= User Form Settings End =-=-=-=-=-=-= -->
+ 
+    <!-- =-=-=-=-=-=-= Our Clients =-=-=-=-=-=-= -->
+    <section class="custom-padding white" id="clients">
+      <div class="container">
+
+        <!-- Row -->
+        <div class="row">
+
+          <!-- col-md-2 client-block -->
+          <div class="col-md-2 col-xs-6 col-sm-4 client-block">
+
+            <!-- client-item client-item-style-2 -->
+            <div class="client-item client-item-style-2">
+              <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_5.png"> </a>
+            </div>
+            <!-- /client-item client-item-style-2 -->
+
+          </div>
+          <!-- /col-md-2 client-block -->
+
+          <!-- col-md-2 client-block -->
+          <div class="col-md-2 col-xs-6 col-sm-4 client-block">
+
+            <!-- client-item client-item-style-2 -->
+            <div class="client-item client-item-style-2">
+              <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_6.png"> </a>
+            </div>
+            <!-- /client-item client-item-style-2 -->
+
+          </div>
+          <!-- /col-md-2 client-block -->
+
+          <!-- col-md-2 client-block -->
+          <div class="col-md-2 col-xs-6 col-sm-4 client-block">
+
+            <!-- client-item client-item-style-2 -->
+            <div class="client-item client-item-style-2">
+              <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_7.png"> </a>
+            </div>
+            <!-- /client-item client-item-style-2 -->
+
+          </div>
+          <!-- /col-md-2 client-block -->
+
+          <!-- col-md-2 client-block -->
+          <div class="col-md-2 col-xs-6 col-sm-4 client-block">
+
+            <!-- client-item client-item-style-2 -->
+            <div class="client-item client-item-style-2">
+              <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_8.png"> </a>
+            </div>
+            <!-- /client-item client-item-style-2 -->
+
+          </div>
+          <!-- /col-md-2 client-block -->
+
+          <!-- col-md-2 client-block -->
+          <div class="col-md-2 col-xs-6 col-sm-4 client-block">
+
+            <!-- client-item client-item-style-2 -->
+            <div class="client-item client-item-style-2">
+              <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_9.png"> </a>
+            </div>
+            <!-- /client-item client-item-style-2 -->
+
+          </div>
+          <!-- /col-md-2 client-block -->
+
+          <!-- col-md-2 client-block -->
+          <div class="col-md-2 col-xs-6 col-sm-4 client-block">
+
+            <!-- client-item client-item-style-2 -->
+            <div class="client-item client-item-style-2">
+              <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_10.png"> </a>
+            </div>
+            <!-- /client-item client-item-style-2 -->
+
+          </div>
+          <!-- /col-md-2 client-block -->
+
+        </div>
+        <!-- Row End -->
+
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- =-=-=-=-=-=-= Our Clients -end =-=-=-=-=-=-= -->
+
+  </div>
+  <!-- =-=-=-=-=-=-= Main Area End =-=-=-=-=-=-= -->
+
+  <!-- =-=-=-=-=-=-= FOOTER =-=-=-=-=-=-= -->
+  <%- include('footer.ejs'); -%>
+
+  <!-- =-=-=-=-=-=-= JQUERY =-=-=-=-=-=-= -->
+  <script src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core Css  -->
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- Jquery Smooth Scroll  -->
+  <script src="/js/jquery.smoothscroll.js"></script>
+  <!-- Jquery Easing -->
+  <script type="text/javascript" src="/js/easing.js"></script>
+  <!-- Jquery Counter -->
+  <script src="/js/jquery.countTo.js"></script>
+  <!-- Jquery Waypoints -->
+  <script src="/js/jquery.waypoints.js"></script>
+  <!-- Jquery Appear Plugin -->
+  <script src="/js/jquery.appear.min.js"></script>
+  <!-- Carousel Slider  -->
+  <script src="/js/carousel.min.js"></script>
+  <!-- Jquery Parallex -->
+  <script src="/js/jquery.stellar.min.js"></script>
+  <!--Style Switcher -->
+  <script src="/js/bootstrap-dropdownhover.min.js"></script>
+  <!-- Include jQuery Syntax Highlighter -->
+  <script type="text/javascript" src="scripts/shCore.js"></script>
+  <script type="text/javascript" src="scripts/shBrushPhp.js"></script>
+  <!-- Template Core JS -->
+  <script src="/js/custom.js"></script>
+</body>
+
+
+<!-- Mirrored from templates.scriptsbundle.com/knowledge/demo/profile-setting.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Feb 2019 12:29:41 GMT -->
+</html>
