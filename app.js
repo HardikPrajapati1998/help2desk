@@ -12,7 +12,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var answerRouter = require('./routes/answer');
 var blogRouter = require('./routes/blog');
-
+var categoryRouter = require('./routes/category');
 var ContactRouter = require('./routes/Contact');
 var questionRouter = require('./routes/question');
 var materialRouter = require('./routes/material');
@@ -37,7 +37,7 @@ app.use('/users', usersRouter);
 app.use('/answer',answerRouter);
 app.use('/question',questionRouter);
 
-
+app.use('/category',categoryRouter);
 app.use('/material',materialRouter);
 app.use('/Contact',ContactRouter);
 mongoose.Promise = global.Promise;
